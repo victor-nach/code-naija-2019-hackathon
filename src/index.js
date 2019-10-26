@@ -26,7 +26,8 @@ app.use(cors(corsOptions));
 
 // app.use('/', routes);
 
-app.get('/', (req, res) => res.render('index'));
+let good = 50000;
+app.get('/', (req, res) => res.render('index', { good }));
 
 app.all('*', (req, res) => Response.resErr(res, 404, 'Sorry endpoint does not exist'));
 
