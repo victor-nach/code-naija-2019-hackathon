@@ -2,7 +2,7 @@ import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-// import routes from './routes';
+import routes from './routes';
 import { Response } from './utils';
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(express.static(`${path.join(__dirname)}/../public`));
 
 app.use(cors(corsOptions));
 
-// app.use('/', routes);
+app.use('/', routes);
 
 app.get('/', (req, res) => res.render('index'));
 
