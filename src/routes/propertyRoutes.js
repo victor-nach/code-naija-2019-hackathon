@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import { CompanyController } from '../controller';
+import { PropertyController } from '../controller';
 
 const router = new  Router();
 
-router.get('/contact', CompanyController.renderContactPage);
+router.get('/add-property', PropertyController.renderAddPropertyPage);
+router.get('/properties', PropertyController.renderPropertiesPage);
+router.get('/properties/:id', PropertyController.renderSinglePropertiesPage);
 
 export default router;
