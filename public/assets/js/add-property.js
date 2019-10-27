@@ -21,12 +21,7 @@
     const add_photo_display = (file, container, img_col_class) => {
         const reader = new FileReader();
 
-        reader.onload = function (e) {
-            // $('#blah')
-            //     .attr('src', e.target.result)
-            //     .width(150)
-            //     .height(200);
-
+        reader.onload = e => {
             $(container).append('<div class="'+img_col_class+'"><img src="' + e.target.result + '" /></div>');
         };
 
@@ -70,4 +65,6 @@
             alert(`Photo must be an image`);
         }
     };
+
+    document.querySelector('[add-property-form]')
 })();
