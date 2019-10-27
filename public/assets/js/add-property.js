@@ -8,6 +8,9 @@
         zoom: 3
     });
 
+    // disable map zoom when using scroll
+    map.scrollZoom.disable();
+
     const add_marker = (coords) => {
         // create a HTML element for each feature
         var el = document.createElement('div');
