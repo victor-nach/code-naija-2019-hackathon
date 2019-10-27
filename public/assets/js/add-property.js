@@ -23,7 +23,6 @@
   var el = document.createElement('div');
   el.className = 'marker';
 
-  // make a marker for each feature and add to the map
   new mapboxgl.Marker(el)
     .setLngLat([6.45407, 3.39467])
     .addTo(map);
