@@ -19,7 +19,19 @@
     ============================================= -->
     <link href="assets/css/external.css" rel="stylesheet">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .marker {
+  background-image: url('assets/images/gmap/mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+    </style>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
@@ -332,291 +344,46 @@
                                         </div>
                                     </div>
                                     <!-- .col-md-12 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label for="select-type">Type</label>
                                             <div class="select--box">
                                                 <i class="fa fa-angle-down"></i>
                                                 <select id="select-type">
-                                            <option>house</option>
-                                            <option>appartment</option>
+                                            <option>Self Contained</option>
+                                            <option>1 Bedroom Flat</option>
+                                            <option>2 Bedroom Flat</option>
+                                            <option>3 Bedroom Flat</option>
+                                            <option>4 Bedroom Flat</option>
                                         </select>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <label for="select-status">Status</label>
-                                            <div class="select--box">
-                                                <i class="fa fa-angle-down"></i>
-                                                <select id="select-status">
-                                            <option>Sale</option>
-                                            <option>Rent</option>
-                                        </select>
-                                            </div>
+                                            <label for="price">Asking Price</label>
+                                            <input type="number" step="1000" class="form-control" name="price" id="price">
                                         </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="location">Location</label>
-                                            <input type="text" class="form-control" name="location" id="location">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Bedrooms">Bedrooms</label>
-                                            <input type="text" class="form-control" name="Bedrooms" id="Bedrooms">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Bathrooms">Bathrooms</label>
-                                            <input type="text" class="form-control" name="Bathrooms" id="Bathrooms">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Floors">Floors</label>
-                                            <input type="text" class="form-control" name="Floors" id="Floors">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Garages">Garages</label>
-                                            <input type="text" class="form-control" name="Garages" id="Garages">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Area">Area</label>
-                                            <input type="text" class="form-control" name="Area" id="Area" placeholder="sq ft">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Size">Size</label>
-                                            <input type="text" class="form-control" name="Size" id="Size" placeholder="sq ft">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Sale-Rent-Price">Sale or Rent Price*</label>
-                                            <input type="text" class="form-control" name="Sale-Rent-Price" id="Sale-Rent-Price" required>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Before-Price-Label">Before Price Label</label>
-                                            <input type="text" class="form-control" name="Before-Price-Label" id="Before-Price-Label" placeholder="ex: start from">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="After-Price-Label">After Price Label</label>
-                                            <input type="text" class="form-control" name="After-Price-Label" id="After-Price-Label" placeholder="ex: monthly">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Property-ID">Property ID*</label>
-                                            <input type="text" class="form-control" name="Property-ID" id="Property-ID">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Video-URL">Video URL</label>
-                                            <input type="text" class="form-control" name="Video-URL" id="Video-URL" placeholder="Youtube, Vimeo, Dailymotion, etc..">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
+                                    </div>                                    
                                 </div>
                                 <!-- .row end -->
                             </div>
-                            <!-- .form-box end -->
                             <div class="form-box">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <h4 class="form--title">Property Features</h4>
+                                        <h4 class="form--title">Property Cover Photo</h4>
                                     </div>
                                     <!-- .col-md-12 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Center Cooling</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-md-offset-4 col-sm-offset-4">
+                                        <div id="dZUpload" class="dropzone"></div>
+                                        <button class="btn btn--primary"><span class="glyphicon glyphicon-plus"></span> cover photo</button>
                                     </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Balcony</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Pet Friendly</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Barbeque</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Fire Alarm</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Modern Kitchen</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Storage</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Dryer</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Heating</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Pool</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Laundry</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Sauna</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Gym</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Elevator</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Dish Washer</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="input-checkbox">
-                                            <label class="label-checkbox">
-                                        <span>Emergency Exit</span>
-                                        <input type="checkbox">
-                                        <span class="check-indicator"></span>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-3 end -->
+                                    <!-- .col-md-12 end -->
+
                                 </div>
                                 <!-- .row end -->
                             </div>
-                            <!-- .form-box end -->
-
                             <div class="form-box">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -625,6 +392,7 @@
                                     <!-- .col-md-12 end -->
                                     <div class="col-xs-12 col-sm-4 col-md-12">
                                         <div id="dZUpload" class="dropzone"></div>
+                                        <button class="btn btn--primary"><span class="glyphicon glyphicon-plus"></span> Add photos</button>
                                     </div>
                                     <!-- .col-md-12 end -->
 
@@ -639,54 +407,12 @@
                                         <h4 class="form--title">Property Location</h4>
                                     </div>
                                     <!-- .col-md-12 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="address">Address*</label>
-                                            <input type="text" class="form-control" name="address" id="address" placeholder="Enter your property address" required>
+                                            <button get-location class="btn btn--primary"><span class="glyphicon glyphicon-map-marker"></span> get location</button>
                                         </div>
                                     </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="select-country">Country</label>
-                                            <div class="select--box">
-                                                <i class="fa fa-angle-down"></i>
-                                                <select id="select-country">
-                                            <option>Select property country</option>
-                                            <option>Select property country</option>
-                                         </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="city">City</label>
-                                            <input class="form-control" name="city" id="city">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="state">State</label>
-                                            <input type="text" class="form-control" name="state" id="state">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="Zip/Postal-code">Zip/Postal Code</label>
-                                            <input type="text" class="form-control" name="Zip/Postal-code" id="Zip/Postal-code">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="form-group">
-                                            <label for="neighborhood">Neighborhood</label>
-                                            <input type="text" class="form-control" name="neighborhood" id="neighborhood">
-                                        </div>
-                                    </div>
-                                    <!-- .col-md-4 end -->
+                                    <!-- .col-md-12 end -->
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div id="googleMap" style="width:100%;height:380px;"></div>
                                     </div>
@@ -695,7 +421,7 @@
                                 <!-- .row end -->
                             </div>
                             <!-- .form-box end -->
-                            <input type="submit" value="Save Edits" name="submit" class="btn btn--primary">
+                            <input type="submit" value="Upload Property" name="submit" class="btn btn--primary">
                         </form>
                     </div>
                     <!-- .col-md-12 end -->
@@ -824,9 +550,11 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/dropzone.js"></script>
     <script src="assets/js/functions.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=true&amp;key=AIzaSyCiRALrXFl5vovX0hAkccXXBFh7zP8AOW8"></script>
-    <script src="assets/js/plugins/jquery.gmap.min.js"></script>
-    <script>
+    <script src="assets/js/add-property.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true&amp;key=AIzaSyCiRALrXFl5vovX0hAkccXXBFh7zP8AOW8"></script>
+    <script src="assets/js/plugins/jquery.gmap.min.js"></script> -->
+    <!-- <script>
         $('#googleMap').gMap({
             address: "121 King St,Melbourne, Australia",
             zoom: 12,
@@ -843,7 +571,7 @@
         });
 
     </script>
-    <script src="assets/js/map-custom.js"></script>
+    <script src="assets/js/map-custom.js"></script> -->
 </body>
 
 </html>
