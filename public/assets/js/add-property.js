@@ -71,3 +71,18 @@
 
     document.querySelector('[add-property-form]')
 })();
+
+const upladImageCloudinary = async (e) => {
+    const file = e.target.files[0];
+    const url = 'https://api.cloudinary.com/v1_1/cristos/image/upload';
+    const presept = 'nv5yivia';
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', presept);
+    try {
+      const response = await axois.post(url, formData);
+      images = response.data.secure_url;
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
