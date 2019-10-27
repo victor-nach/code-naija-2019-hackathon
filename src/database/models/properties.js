@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.STRING,
     price: DataTypes.NUMBER,
     cover: DataTypes.STRING,
+    lng: DataTypes.NUMBER,
+    lat: DataTypes.NUMBER,
   }, {});
   Properties.associate = function(models) {
     // associations can be defined here

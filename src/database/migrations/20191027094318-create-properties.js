@@ -23,6 +23,12 @@ module.exports = {
       cover: {
         type: Sequelize.STRING
       },
+      lng: {
+        type: Sequelize.DECIMAL,
+      },
+      lat: {
+        type: Sequelize.DECIMAL,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -35,4 +41,3 @@ module.exports = {
 };
 
 
-      
