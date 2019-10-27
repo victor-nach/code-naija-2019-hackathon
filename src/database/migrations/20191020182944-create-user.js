@@ -27,14 +27,6 @@ module.exports = {
       allowNull: false,
       type: Sequelize.STRING,
     },
-    lng: {
-      allowNull: false,
-      type: Sequelize.DECIMAL,
-    },
-    lnt: {
-      allowNull: false,
-      type: Sequelize.DECIMAL,
-    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE,
